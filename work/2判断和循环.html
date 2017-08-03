@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <button type="button" @click="bok=!bok">点击变换</button>
+    <h2 v-if="bok">说说说</h2>
+    <p>我爱吃的水果种类</p>
+    <ul>
+        <li v-for="(item,index) in sg">我爱吃{{item.name}}他的序号为{{index}}</li>
+    </ul>
+    <p>我今天参加运动会的成绩</p>
+    <ul>
+        <li v-for="(item,index) in sport">项目{{item.name}}成绩{{item.code}}</li>
+    </ul>
+</div>
+<script charset="utf-8" type="text/javascript" src="js/vue.js"></script>
+<script>
+    var app =new Vue({
+        el:'#app',
+        data:{
+            bok:false,
+            sg:[
+                {name:'苹果'},
+                {name:'西瓜'},
+                {name:'葡萄'},
+                {name:'芒果'}
+            ],
+            sport:[
+                {name:'跳水',code:'90分'},
+                {name:'散打',code:'80分'},
+                {name:'拳击',code:'95分'},
+                {name:'捡肥皂',code:'100分'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>
